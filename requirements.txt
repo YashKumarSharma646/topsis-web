@@ -1,0 +1,4 @@
+flask
+flask-mail
+TOPSIS-Yash-102303701
+gunicorn
