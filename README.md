@@ -2,86 +2,99 @@
 
 ### 🔹 Methodology (TOPSIS Workflow)
 
-The web application follows the standard **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)** methodology to rank alternatives based on multiple criteria. The complete workflow is as follows:
+The web application implements the standard **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)** methodology to rank alternatives based on multiple criteria. The complete workflow is executed using a custom-developed PyPI package and is described below:
 
 1. **Input Data Collection**
-   - The user uploads a CSV file containing alternatives and criteria values.
-   - The first column represents the alternatives (e.g., funds, options).
-   - Remaining columns represent numerical criteria values.
+   - The user uploads a CSV file through the web interface.
+   - The **first column** represents the alternatives.
+   - The remaining columns contain **numeric criteria values**.
 
 2. **Weight and Impact Definition**
    - The user provides:
-     - Weights for each criterion (importance level).
-     - Impacts (`+` for benefit criteria, `-` for cost criteria).
+     - **Weights** representing the importance of each criterion.
+     - **Impacts** where `+` denotes a beneficial criterion and `-` denotes a non-beneficial criterion.
 
 3. **Normalization of Decision Matrix**
-   - Each criterion value is normalized using vector normalization to remove scale differences between criteria.
+   - Criteria values are normalized using vector normalization to eliminate the effect of differing units and scales.
 
 4. **Weighted Normalized Matrix**
-   - Normalized values are multiplied by their corresponding weights to reflect relative importance.
+   - Each normalized value is multiplied by its corresponding weight to incorporate relative importance.
 
 5. **Ideal Best and Ideal Worst Solutions**
-   - Ideal Best: Best value for each criterion based on its impact.
-   - Ideal Worst: Worst value for each criterion based on its impact.
+   - **Ideal Best Solution:** Best values for each criterion based on impacts.
+   - **Ideal Worst Solution:** Worst values for each criterion based on impacts.
 
 6. **Distance Calculation**
-   - Euclidean distance of each alternative from:
+   - Euclidean distances of each alternative are calculated from:
      - Ideal Best solution
      - Ideal Worst solution
 
 7. **TOPSIS Score Calculation**
-   - The relative closeness to the ideal solution is computed for each alternative:
+   - The relative closeness of each alternative to the ideal solution is computed as:
      ```
-     TOPSIS Score = Distance from Ideal Worst / (Distance from Ideal Best + Distance from Ideal Worst)
+     TOPSIS Score = Distance from Ideal Worst /
+                    (Distance from Ideal Best + Distance from Ideal Worst)
      ```
 
-8. **Ranking**
+8. **Ranking of Alternatives**
    - Alternatives are ranked in descending order of TOPSIS scores.
-   - Higher score indicates a better alternative.
+   - A higher score indicates a more preferred alternative.
 
-This entire computation is performed using a **custom-built PyPI package**, ensuring modularity and reusability.
+All computations are performed using a **custom-built PyPI package**, ensuring modularity, correctness, and reusability.
 
 ---
 
 ### 🔹 Result Table Explanation
 
-After computation, the output file includes the following columns:
+After computation, the application generates an output CSV file with the following structure:
 
 | Column Name | Description |
 |------------|-------------|
-| Alternative | Name of the option/fund |
+| Alternative | Name of the alternative |
 | Criteria Columns | Original numeric criteria values |
-| TOPSIS Score | Relative closeness to ideal solution |
-| Rank | Final rank based on TOPSIS score |
+| TOPSIS Score | Relative closeness to the ideal solution |
+| Rank | Final ranking based on TOPSIS score |
 
 **Interpretation:**
-- A higher TOPSIS score means the alternative is closer to the ideal best solution.
-- Rank `1` indicates the most preferred alternative based on given criteria, weights, and impacts.
+- Alternatives with **higher TOPSIS scores** are closer to the ideal best solution.
+- **Rank 1** represents the most optimal alternative based on the provided criteria, weights, and impacts.
+- The tabular output ensures **transparent and reproducible** decision-making.
 
 ---
 
-### 🔹 Result Graph Interpretation
+### 🔹 Sample Input and Output Files
 
-A graphical analysis can be derived from the result table by plotting:
+#### 📥 Sample Input File
+A sample input file used for testing the application is provided below:
 
-- **X-axis:** Alternatives
-- **Y-axis:** TOPSIS Scores
+- **Input CSV:**  
+  [`uploads/data.csv`](uploads/data.csv)
 
-**Graph Insights:**
-- Taller bars (or higher points) represent better-performing alternatives.
-- The graph visually highlights:
-  - Performance gaps between alternatives
-  - Dominant and weak options
-- It helps decision-makers quickly compare and justify rankings.
+This file contains alternatives and their corresponding criteria values in numeric format.
 
-Such visualization enhances interpretability and supports data-driven decision-making.
+---
+
+#### 📤 Sample Output File
+The corresponding output file generated after applying the TOPSIS algorithm is:
+
+- **Output CSV:**  
+  [`outputs/result.csv`](outputs/result.csv)
+
+This file includes the computed **TOPSIS Score** and **Rank** for each alternative.
 
 ---
 
 ### 🔹 Final Outcome
 
 The TOPSIS web application successfully:
-- Automates multi-criteria decision-making
+- Accepts real-world decision data in CSV format
+- Applies the TOPSIS algorithm using a custom Python package
+- Produces a clear and interpretable result table
+- Ensures reproducibility through file-based input and output
+- Demonstrates an end-to-end deployed decision-support system
+
+This project effectively combines **theoretical rigor**, **software modularity**, and **practical deployment**.
+
 - Produces transparent and reproducible rankings
 - Combines algorithmic rigor with practical usability
 - Demonstrates real-world deployment using a custom Python package
