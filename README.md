@@ -1,6 +1,6 @@
-## 📊 Methodology, Results, and Analysis
+##  Methodology, Results, and Analysis
 
-### 🔹 Methodology (TOPSIS Workflow)
+###  Methodology (TOPSIS Workflow)
 
 The web application implements the standard **TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution)** methodology to rank alternatives based on multiple criteria. The complete workflow is executed using a custom-developed PyPI package and is described below:
 
@@ -44,7 +44,7 @@ All computations are performed using a **custom-built PyPI package**, ensuring m
 
 ---
 
-### 🔹 Result Table Explanation
+###  Result Table Explanation
 
 After computation, the application generates an output CSV file with the following structure:
 
@@ -62,9 +62,9 @@ After computation, the application generates an output CSV file with the followi
 
 ---
 
-### 🔹 Sample Input and Output Files
+###  Sample Input and Output Files
 
-#### 📥 Sample Input File
+#### Sample Input File
 A sample input file used for testing the application is provided below:
 
 - **Input CSV:**  
@@ -74,7 +74,7 @@ This file contains alternatives and their corresponding criteria values in numer
 
 ---
 
-#### 📤 Sample Output File
+#### Sample Output File
 The corresponding output file generated after applying the TOPSIS algorithm is:
 
 - **Output CSV:**  
@@ -84,7 +84,7 @@ This file includes the computed **TOPSIS Score** and **Rank** for each alternati
 
 ---
 
-### 🔹 Final Outcome
+###  Final Outcome
 
 The TOPSIS web application successfully:
 - Accepts real-world decision data in CSV format
@@ -100,3 +100,8 @@ This project effectively combines **theoretical rigor**, **software modularity**
 - Demonstrates real-world deployment using a custom Python package
 
 This approach ensures both **theoretical correctness** and **practical applicability**.
+
+### Website Link
+The Topsis Live website is available here:  
+[Topsis Live Website](https://topsis-web-jhxp.onrender.com)
+
