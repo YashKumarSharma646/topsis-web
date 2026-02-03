@@ -105,3 +105,7 @@ This approach ensures both **theoretical correctness** and **practical applicabi
 The Topsis Live website is available here:  
 [Topsis Live Website](https://topsis-web-jhxp.onrender.com)
 
+### Python Package Link
+The python package has been uploaded,
+The link to the package is given as follow:
+https://pypi.org/project/TOPSIS-Yash-102303701/
