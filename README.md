@@ -105,7 +105,48 @@ This approach ensures both **theoretical correctness** and **practical applicabi
 The Topsis Live website is available here:  
 [Topsis Live Website](https://topsis-web-jhxp.onrender.com)
 
-### Python Package Link
-The python package has been uploaded,
-The link to the package is given as follow:
-https://pypi.org/project/TOPSIS-Yash-102303701/
+## Part II: PyPI Package
+
+The **TOPSIS-Yash-102303701** package is published on **PyPI**, making it easy to install and use in any Python project.
+
+---
+
+###  Package Information
+
+- **Package Name:** `TOPSIS-Yash-102303701`
+- **Version:** `0.4`
+- **PyPI Link:** https://pypi.org/project/TOPSIS-Yash-102303701/
+
+---
+
+###  Installation
+
+Install the package using `pip`:
+
+```bash
+pip install TOPSIS-Yash-102303701
+Usage as Command Line Tool
+After installation, use the topsis command from the terminal:
+
+topsis input.csv "1,1,1,1" "+,+,-,+" output.csv
+Arguments:
+
+input.csv → Input dataset
+
+"1,1,1,1" → Weights for criteria
+
+"+,+,-,+" → Impacts (+ = benefit, - = cost)
+
+output.csv → Output file with TOPSIS scores & ranks
+
+Usage as Python Module
+You can also use the package directly in Python:
+
+from topsis import topsis
+
+topsis(
+    input_file="input.csv",
+    weights=[1, 1, 1, 1],
+    impacts=["+", "+", "-", "+"],
+    output_file="output.csv"
+)
